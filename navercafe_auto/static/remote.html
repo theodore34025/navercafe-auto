@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>네이버 카페 · 원격 로그인</title>
+  <link rel="stylesheet" href="/static/remote.css">
+  <script src="/static/remote.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><span class="badge">NAVER CAFE AUTO</span><h1>클라우드에서 직접 로그인</h1>
+      <p>아래 브라우저 화면에서 로그인과 추가 인증을 완료한 뒤 세션을 저장하세요.</p></header>
+    <section id="auth-panel" class="card">
+      <h2>원격 화면 연결</h2><p>서버 터미널에서 확인한 접속 코드를 입력하세요. 네이버 비밀번호를 입력하는 칸이 아닙니다.</p>
+      <form id="auth-form"><label for="token">접속 코드</label><div class="row"><input id="token" type="password" required autocomplete="off"><button>연결</button></div></form>
+    </section>
+    <section id="control-panel" class="card" hidden>
+      <ol><li>로그인 화면 열기</li><li>네이버 로그인·추가 인증</li><li>로그인 완료 · 세션 저장</li></ol>
+      <div class="row actions"><button id="start">로그인 화면 열기</button><button id="save" class="primary" disabled>로그인 완료 · 세션 저장</button><button id="close" class="secondary" disabled>원격 브라우저 종료</button></div>
+      <p class="hint">화면을 클릭한 뒤 키보드로 입력할 수 있습니다. 한글·붙여넣기는 아래 입력 도구도 사용할 수 있습니다. 인증 요청은 네이버 화면에서 직접 완료하세요.</p>
+      <div id="viewport"><p id="empty">로그인 화면 열기를 누르면 브라우저가 표시됩니다.</p><img id="screen" alt="원격 네이버 브라우저 화면" tabindex="0" draggable="false" hidden></div>
+      <form id="text-form"><label for="text">한글·붙여넣기 입력 도구</label><div class="row"><input id="text" type="password" autocomplete="off" placeholder="원격 화면에서 입력 칸을 먼저 클릭하세요"><button id="insert" disabled>선택한 칸에 입력</button></div></form>
+      <p class="hint">입력 도구의 내용은 전송 후 지워집니다. 화면과 입력은 파일로 기록하지 않습니다. 저장된 로그인 세션은 이 서버의 게시글·댓글 작성 기능에서 사용됩니다.</p>
+    </section>
+    <p id="status" role="status" aria-live="polite">접속 대기 중</p>
+    <footer>사용을 마치면 원격 브라우저를 종료하세요. 조작이 없으면 15분 후 브라우저가 종료됩니다.</footer>
+  </main>
+</body>
+</html>
