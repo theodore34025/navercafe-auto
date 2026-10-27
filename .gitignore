@@ -6,3 +6,8 @@ __pycache__/
 artifacts/
 
 .remote-login/
+
+.venv-pc/
+
+build/
+dist/

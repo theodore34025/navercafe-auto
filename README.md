@@ -13,6 +13,8 @@ python -m playwright install chromium
 
 Linux에서 브라우저 시스템 라이브러리가 없으면 관리자 권한으로 `python -m playwright install-deps chromium`을 실행하세요.
 
+PC의 직접 로그인·게시글·댓글 기능은 기본 설치만으로 실행됩니다. 원격 화면 기능이 필요한 환경에서만 `python -m pip install '.[remote]'`로 선택 의존성을 설치하세요. Windows에서는 [PC_START.md](PC_START.md)의 설치 파일을 사용하며 Python 3.12 64비트를 명시적으로 선택합니다.
+
 ## 클라우드에서 직접 로그인
 
 별도 데스크톱이나 VNC 없이 Chromium 화면을 웹으로 전달합니다. 화면 클릭, 키보드, 스크롤, 드래그, 한글·붙여넣기 입력 도구가 있습니다.
@@ -91,4 +93,4 @@ navercafe --help
 python -m unittest discover -s tests -v
 ```
 
-재현 가능한 의존성 설치는 `UV_CACHE_DIR=/workspace/.cache/uv uv sync --frozen`을 사용합니다.
+재현 가능한 의존성 설치는 `UV_CACHE_DIR=/workspace/.cache/uv uv sync --frozen --extra remote`을 사용합니다.

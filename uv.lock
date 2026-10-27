@@ -486,18 +486,23 @@ wheels = [
 
 [[package]]
 name = "navercafe-auto"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "." }
 dependencies = [
-    { name = "aiohttp" },
     { name = "playwright" },
+]
+
+[package.optional-dependencies]
+remote = [
+    { name = "aiohttp" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "aiohttp", specifier = "==3.13.2" },
+    { name = "aiohttp", marker = "extra == 'remote'", specifier = "==3.13.2" },
     { name = "playwright", specifier = "==1.55.0" },
 ]
+provides-extras = ["remote"]
 
 [[package]]
 name = "playwright"

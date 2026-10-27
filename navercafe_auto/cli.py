@@ -138,7 +138,12 @@ def main(argv=None):
     args = parser().parse_args(argv)
     try:
         if args.command == "remote-login":
-            from .remote import serve
+            try:
+                from .remote import serve
+            except ModuleNotFoundError as exc:
+                if exc.name != "aiohttp":
+                    raise
+                raise AutomationError("원격 로그인은 선택 기능입니다. python -m pip install '.[remote]'로 추가 설치하세요. PC 직접 로그인은 navercafe login을 사용하세요.") from None
             if not 1 <= args.port <= 65535:
                 raise AutomationError("포트는 1~65535여야 합니다.")
             serve(Path(args.session).absolute(), args.host, args.port)

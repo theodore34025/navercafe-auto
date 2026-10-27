@@ -4,13 +4,17 @@
 
 ## 1. Python 설치
 
-https://www.python.org/downloads/windows/ 에서 Python 3.12 설치 프로그램을 받아 설치합니다. 설치 화면에서 `Add python.exe to PATH`와 Python launcher 설치 옵션을 선택하세요. 이미 Python 3.11 이상이 설치되어 있다면 생략할 수 있습니다.
+[Python 3.12.10 Windows 64비트 설치 프로그램](https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe)을 받아 설치합니다. 설치 화면에서 `Add python.exe to PATH`와 Python launcher 설치 옵션을 선택하세요. 이미 Python 3.12 64비트가 설치되어 있다면 생략할 수 있습니다. 다른 Python 버전은 삭제하지 않아도 됩니다. 이 설치 파일은 `py -3.12`로 3.12를 명시적으로 선택합니다.
 
 ## 2. ZIP 압축 해제 및 설치
 
 ZIP 전체를 일반 폴더(예: 바탕화면의 `navercafe-auto`)에 압축 해제합니다. ZIP 내부에서 바로 실행하지 마세요.
 
 `pc` 폴더의 `01-install.bat`을 더블클릭합니다. Chromium과 필요한 패키지를 다운로드하므로 인터넷 연결이 필요합니다. `Installation complete`가 나오면 설치 완료입니다. 오류가 나오면 해당 창의 오류를 확인하세요. 관리자 권한은 필요하지 않습니다.
+
+### 이전 설치에서 aiohttp 오류가 났다면
+
+수정된 ZIP을 **새 폴더**에 압축 해제하고 `01-install.bat`을 실행하세요. PC에 필요 없는 `aiohttp`는 기본 설치에서 제외했습니다. 새 설치는 `.venv-pc`를 사용하므로 예전 `.venv`와 충돌하지 않습니다. C 컴파일러를 설치할 필요가 없습니다. [1/4] 단계에서 멈추면 위 Python 3.12 64비트 설치 프로그램을 먼저 설치하세요.
 
 ## 3. 로그인
 
